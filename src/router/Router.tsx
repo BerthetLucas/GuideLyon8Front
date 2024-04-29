@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "@/page/Home";
 import { Profil } from "@/page/Profil";
+import { Registration } from "@/page/Registration";
 
 export const Router = () => {
   return (
@@ -8,6 +9,7 @@ export const Router = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profil" element={<Profil />} />
+        <Route path="/registration" element={<Registration />} />
       </Routes>
     </BrowserRouter>
   );
