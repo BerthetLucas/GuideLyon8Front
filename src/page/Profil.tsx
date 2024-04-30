@@ -1,6 +1,3 @@
 export const Profil = () => {
-    return(
-        <>Profil
-        </>
-    )
-}
+  return <>Profil</>;
+};

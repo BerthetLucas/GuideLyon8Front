@@ -13,31 +13,32 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 
-export const RegistrationForm = () => {
+export const LoginForm = () => {
   const formSchema = z.object({
-    email: z.string(),
-    plainPassword: z.string(),
+    username: z.string(),
+    password: z.string(),
   });
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
-      plainPassword: "", 
+      username: "",
+      password: "", 
     },
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     const config = {
       headers: {
-        "Content-Type": "application/ld+json", 
+        "Content-Type": "application/ld+json",
       },
     };
 
     axios
-      .post("http://127.0.0.1:8000/api/users", values, config)
+      .post("http://127.0.0.1:8000/api/login_check", values, config)
       .then((response) => {
         console.log(response.data);
+        localStorage.setItem('token', response.data['token']); 
       })
       .catch((error) => {
         console.error("Erreur lors de la requête POST:", error);
@@ -52,7 +53,7 @@ export const RegistrationForm = () => {
       >
         <FormField
           control={form.control}
-          name="email"
+          name="username"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Adresse Email</FormLabel>
@@ -65,7 +66,7 @@ export const RegistrationForm = () => {
         />
         <FormField
           control={form.control}
-          name="plainPassword"
+          name="password"
           render={({ field }) => (
             <FormItem>
               <FormLabel>Mot de Passe</FormLabel>
