@@ -1,6 +1,5 @@
 import { RegistrationForm } from "@/components/logic/registrationForm";
 
-
 export const Registration = () => {
   return (
     <>
