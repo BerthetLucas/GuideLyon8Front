@@ -1,11 +1,10 @@
-import { AddShopForm } from "@/components/logic/AddShopForm";
-import { ShopList } from "@/components/logic/ShopList";
+import { Card } from "@/components/ui/card";
 
 export const Home = () => {
   return (
     <>
-      <AddShopForm />
-      <ShopList />
+  <Card />
+  
     </>
   );
 };
