@@ -11,7 +11,7 @@ export const Card = () => {
         />
       </div>
       <div className="flex flex-col items-center justify-center gap-5 h-56">
-        <p className='font-bold'>Nom de l'établissement</p>
+        <p className="font-bold">Nom de l'établissement</p>
         <p>Adresse de l'établissement</p>
         <Button>Voir</Button>
       </div>
